@@ -32,7 +32,7 @@ func NewEllipticECDH(curve elliptic.Curve) ECDH {
 func (e *ellipticECDH) GenerateKey(rand io.Reader) (crypto.PrivateKey, crypto.PublicKey, error) {
 	var d []byte
 	var x, y *big.Int
-	var priv *ellipticPrivateKey
+	var priv *EllipticPrivateKey
 	var pub *ellipticPublicKey
 	var err error
 
@@ -41,7 +41,7 @@ func (e *ellipticECDH) GenerateKey(rand io.Reader) (crypto.PrivateKey, crypto.Pu
 		return nil, nil, err
 	}
 
-	priv = &ellipticPrivateKey{
+	priv = &EllipticPrivateKey{
 		D: d,
 	}
 	pub = &ellipticPublicKey{

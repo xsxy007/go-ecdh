@@ -17,7 +17,7 @@ type ellipticPublicKey struct {
 	X, Y *big.Int
 }
 
-type ellipticPrivateKey struct {
+type EllipticPrivateKey struct {
 	D []byte
 }
 
